@@ -7,6 +7,7 @@
     currentDayNumber: document.getElementById("currentDayNumber"),
     currentDayTopic: document.getElementById("currentDayTopic"),
     cycleStartDate: document.getElementById("cycleStartDate"),
+    daySelect: document.getElementById("daySelect"),
     dayButtons: document.getElementById("dayButtons"),
     focusTitle: document.getElementById("focusTitle"),
     focusSummary: document.getElementById("focusSummary"),
@@ -79,6 +80,16 @@
     });
   }
 
+  function renderDaySelect() {
+    els.daySelect.innerHTML = "";
+    days.forEach((day) => {
+      const option = document.createElement("option");
+      option.value = String(day.day);
+      option.textContent = `Day ${day.day} - ${day.title}`;
+      els.daySelect.appendChild(option);
+    });
+  }
+
   function renderTopicDetails(day) {
     els.topicDetails.innerHTML = "";
     day.sections.forEach((section) => {
@@ -108,6 +119,7 @@
         ? `Matched to ${els.cycleStartDate.value}`
         : "Manual preview";
     els.topicDetailsTitle.textContent = `${day.title} Practice`;
+    els.daySelect.value = String(day.day);
 
     renderDayButtons(dateCycleDay);
     renderTopicDetails(day);
@@ -128,6 +140,12 @@
       render();
     });
 
+    els.daySelect.addEventListener("change", () => {
+      selectedDay = Number(els.daySelect.value);
+      render();
+    });
+
+    renderDaySelect();
     render();
   }
 
