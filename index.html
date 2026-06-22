@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Daily Comic Practice Cycle</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="site-shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">10 day rotating study plan</p>
+          <h1>Daily Comic Practice Cycle</h1>
+          <p class="hero-copy">
+            A simple static tracker for warm-up, skill study, application, and
+            project practice. The displayed topic changes each day in a
+            repeating 10 day cycle.
+          </p>
+        </div>
+
+        <section class="today-card" aria-labelledby="todayTitle">
+          <p class="card-label">Selected Date</p>
+          <h2 id="todayTitle">Day <span id="currentDayNumber">1</span></h2>
+          <p id="currentDayTopic" class="today-topic">Back to Basics</p>
+          <label class="start-date-control" for="cycleStartDate">
+            Check date
+            <input id="cycleStartDate" type="date" />
+          </label>
+        </section>
+      </header>
+
+      <section class="day-picker" aria-label="Cycle day selector">
+        <div class="section-heading">
+          <p class="eyebrow">Cycle Topics</p>
+          <h2>Choose a Day</h2>
+        </div>
+        <div id="dayButtons" class="day-buttons"></div>
+      </section>
+
+      <section class="focus-panel" aria-labelledby="focusTitle">
+        <div class="focus-copy">
+          <p class="eyebrow">Selected Focus</p>
+          <h2 id="focusTitle">Back to Basics</h2>
+          <p id="focusSummary" class="focus-summary"></p>
+        </div>
+        <div class="focus-meta">
+          <span id="selectedDayLabel">Day 1</span>
+          <span id="cycleStatus">Repeats every 10 days</span>
+        </div>
+      </section>
+
+      <section class="schedule-grid" aria-label="Daily schedule">
+        <article class="schedule-card">
+          <p class="time">20 min</p>
+          <h3>Warm-up</h3>
+          <ul>
+            <li>Gesture drawing</li>
+            <li>Boxes</li>
+            <li>Heads</li>
+            <li>Quick sketches</li>
+          </ul>
+        </article>
+        <article class="schedule-card">
+          <p class="time">40 min</p>
+          <h3>Skill Study</h3>
+          <p>Study one focused topic from the selected cycle day.</p>
+        </article>
+        <article class="schedule-card">
+          <p class="time">30 min</p>
+          <h3>Application</h3>
+          <ul>
+            <li>Use the studied skill in an actual scene.</li>
+            <li>Draw an illustration based on the skill.</li>
+            <li>Apply it directly to a current project.</li>
+          </ul>
+        </article>
+        <article class="schedule-card">
+          <p class="time">60 min</p>
+          <h3>Project Work</h3>
+          <p>
+            Spend focused time on a short, mid-range, or long-range comic
+            project.
+          </p>
+        </article>
+      </section>
+
+      <section class="details-grid">
+        <article class="detail-card">
+          <h2>Warm-up Base</h2>
+          <ul>
+            <li>Dexterity</li>
+            <li>2D to 3D</li>
+            <li>Rotating 3D forms</li>
+            <li>Manipulating 3D forms</li>
+          </ul>
+        </article>
+
+        <article class="detail-card main-topic-card">
+          <h2 id="topicDetailsTitle">Day Topic</h2>
+          <div id="topicDetails"></div>
+        </article>
+
+        <article class="detail-card">
+          <h2>Project Types</h2>
+          <dl class="project-list">
+            <dt>Short Projects</dt>
+            <dd>A 10 page comic intended to be completed in 10 days.</dd>
+            <dt>Mid-Range Projects</dt>
+            <dd>A polished 40 to 60 page one-shot, completed within 30 to 40 days.</dd>
+            <dt>Long-Range Projects</dt>
+            <dd>Any serialized project with more than one chapter.</dd>
+          </dl>
+        </article>
+      </section>
+
+      <section class="resources">
+        <div class="section-heading">
+          <p class="eyebrow">Reference</p>
+          <h2>Useful Websites</h2>
+        </div>
+        <div class="resource-grid">
+          <article>
+            <h3>Drawing Practice</h3>
+            <ul>
+              <li> <a href="https://practicedrawingthis.com/sitemap/" target="__blank">Practice Drawing This</a> </li>
+			  <li> <a href="https://practicedrawingthis.com/sitemap/" target="__blank">Art of Animation</a> </li>
+			  <li> <a href="https://practicedrawingthis.com/sitemap/" target="__blank">Pinterest</a> </li>
+              
+            </ul>
+          </article>
+          <article>
+            <h3>Contests</h3>
+            <ul>
+				<li> <a href="https://practicedrawingthis.com/sitemap/" target="__blank">Wordless World Manga Contest by KADOKAWA</a> </li>
+				<li> <a href="https://practicedrawingthis.com/sitemap/" target="__blank">MANGA Plus Creators by SHUEISHA</a> </li>
+            </ul>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="questions.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
