@@ -63,6 +63,7 @@ select {
 .hero,
 .day-picker,
 .focus-panel,
+.genre-generator,
 .resources {
   padding: 24px;
 }
@@ -156,6 +157,7 @@ h3 {
 
 .day-picker,
 .focus-panel,
+.genre-generator,
 .details-grid,
 .resources {
   margin-top: 18px;
@@ -261,6 +263,41 @@ h3 {
 .focus-meta span {
   border: 1px solid rgba(255, 255, 255, 0.25);
   padding: 8px 10px;
+}
+
+.genre-generator {
+  border: 1px solid var(--line);
+  background: rgba(23, 27, 36, 0.88);
+  box-shadow: var(--shadow);
+}
+
+.genre-button {
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: #1a1110;
+  padding: 10px 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.genre-button:hover {
+  background: var(--accent-dark);
+}
+
+.genre-list {
+  display: flex;
+  min-height: 54px;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.genre-pill {
+  border: 1px solid rgba(240, 191, 88, 0.7);
+  background: var(--paper-soft);
+  color: var(--ink);
+  padding: 9px 12px;
+  font-weight: 700;
 }
 
 .schedule-grid,
@@ -388,6 +425,7 @@ li + li {
   .hero,
   .day-picker,
   .focus-panel,
+  .genre-generator,
   .resources,
   .schedule-card,
   .detail-card {
