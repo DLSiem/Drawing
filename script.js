@@ -15,9 +15,55 @@
     cycleStatus: document.getElementById("cycleStatus"),
     topicDetailsTitle: document.getElementById("topicDetailsTitle"),
     topicDetails: document.getElementById("topicDetails"),
+    generateGenresButton: document.getElementById("generateGenresButton"),
+    genreList: document.getElementById("genreList"),
   };
 
   const days = Array.isArray(window.CYCLE_DAYS) ? window.CYCLE_DAYS : [];
+  const genres = [
+    "Action",
+    "Adventure",
+    "Cars",
+    "Comedy",
+    "Coming of age",
+    "Demons",
+    "Drama",
+    "Dementia",
+    "Fantasy",
+    "Game",
+    "Harem",
+    "Historical",
+    "Horror",
+    "Isekai",
+    "Josei",
+    "Kids",
+    "Magic",
+    "Martial Arts",
+    "Mecha",
+    "Military",
+    "Music",
+    "Mystery",
+    "Parody",
+    "Police",
+    "Psychological",
+    "Romance",
+    "Samurai",
+    "School",
+    "Sci-Fi",
+    "Seinen",
+    "Shoujo",
+    "Shounen",
+    "Slice of Life",
+    "Space",
+    "Sports",
+    "Super Power",
+    "Supernatural",
+    "Suspense",
+    "Thriller",
+    "Unknown",
+    "War",
+    "Vampire",
+  ];
   let selectedDay = 1;
 
   function toDateInputValue(date) {
@@ -102,6 +148,29 @@
     });
   }
 
+  function getRandomGenres() {
+    const shuffled = [...genres];
+    for (let index = shuffled.length - 1; index > 0; index -= 1) {
+      const randomIndex = Math.floor(Math.random() * (index + 1));
+      [shuffled[index], shuffled[randomIndex]] = [
+        shuffled[randomIndex],
+        shuffled[index],
+      ];
+    }
+    const genreCount = Math.floor(Math.random() * 4) + 2;
+    return shuffled.slice(0, genreCount);
+  }
+
+  function renderGenres() {
+    els.genreList.innerHTML = "";
+    getRandomGenres().forEach((genre) => {
+      const item = document.createElement("span");
+      item.className = "genre-pill";
+      item.textContent = genre;
+      els.genreList.appendChild(item);
+    });
+  }
+
   function render() {
     if (!days.length) return;
 
@@ -145,7 +214,10 @@
       render();
     });
 
+    els.generateGenresButton.addEventListener("click", renderGenres);
+
     renderDaySelect();
+    renderGenres();
     render();
   }
 
